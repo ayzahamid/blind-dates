@@ -6,8 +6,12 @@ module Api
 
     protected
 
-    def error_response(error_message, status)
-      render json: { succcess: false, error: error_message }, status: status
+    def success_response(object)
+      render json: object.to_json, status: :ok
+    end
+
+    def error_response(status, message = nil)
+      render json: { message: message || I18n.t('unprocessable_request') }, status: status
     end
   end
 end
