@@ -6,7 +6,7 @@ class Employee < ApplicationRecord
   belongs_to :department
 
   has_many :group_memberships, dependent: :destroy
-  has_many :group, through: :group_memberships
+  has_many :groups, through: :group_memberships
   has_many :invites, dependent: :destroy
 
   scope :with_accepted_invitations, lambda { |start_date|

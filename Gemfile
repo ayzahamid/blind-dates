@@ -16,5 +16,9 @@ gem 'jbuilder', '~> 2.11.5'
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop-rails', platforms: %i[mri mingw x64_mingw]
+  gem 'rubocop-rspec'
   gem 'faker', '~> 3.1'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'rspec-rails', '~> 6.0.3'
 end
