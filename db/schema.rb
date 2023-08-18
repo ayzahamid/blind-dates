@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_14_171013) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_14_171849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +44,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_171013) do
     t.datetime "start_date_of_week", default: "2023-08-14 17:04:12", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "invites", force: :cascade do |t|
+    t.datetime "start_date_of_week", default: "2023-08-14 17:23:39", null: false
+    t.bigint "employee_id", null: false
+    t.string "status", default: "pending", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_invites_on_employee_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
