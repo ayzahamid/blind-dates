@@ -1,0 +1,34 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.7.1
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - vendor/**/*
+    - node_modules/**/*
+    - bin/webpack*
+    - config/environments/*
+    - config/routes.rb
+    - bin/**/*
+    - config/initializers/devise.rb
+
+Style/Documentation:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - production
