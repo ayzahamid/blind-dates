@@ -4,9 +4,10 @@ en:
     presence:
       date: Please provide the date for which the invitations should be sent.
       status: Status must be provided.
+    accepted:
+      not_found: "No employee was found who accepted the invite for this week"
     success:
       update: The status of your invitation has been updated.
     fail:
       sending: "Failed to send invite to %{employee_list}."
       already_invited: "%{employee_list} already received the invites for this week."
-

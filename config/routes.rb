@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1, defaults: { format: :json } do
       resources :employees, only: [:create]
       resources :invites, only: [:create, :update]
+      resources :groups, only: [:index, :create]
     end
   end
 end
