@@ -1,2 +1,12 @@
 en:
-  unprocessable_request: 'Unable to process the request'
+  unprocessable_request: Unable to process the request.
+  invite:
+    presence:
+      date: Please provide the date for which the invitations should be sent.
+      status: Status must be provided.
+    success:
+      update: The status of your invitation has been updated.
+    fail:
+      sending: "Failed to send invite to %{employee_list}."
+      already_invited: "%{employee_list} already received the invites for this week."
+

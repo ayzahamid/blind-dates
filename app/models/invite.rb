@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class Invite < ApplicationRecord
-  {
+  STATUSES = {
     pending: 'pending',
     no: 'no',
     yes: 'yes',
     maybe: 'maybe'
-  }
+  }.freeze
 
   enum status: STATUSES
 
