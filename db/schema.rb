@@ -41,13 +41,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_171849) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.datetime "start_date_of_week", default: "2023-08-14 17:04:12", null: false
+    t.datetime "start_date_of_week", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "invites", force: :cascade do |t|
-    t.datetime "start_date_of_week", default: "2023-08-14 17:23:39", null: false
+    t.datetime "start_date_of_week", null: false
     t.bigint "employee_id", null: false
     t.string "status", default: "pending", null: false
     t.datetime "created_at", null: false
