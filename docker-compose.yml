@@ -1,0 +1,28 @@
+version: "3.5"
+
+services:
+  db:
+    image: postgres:14
+    volumes:
+      - "./postgres:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+  web:
+    build: .
+    environment:
+      - RAILS_ENV=development
+    volumes:
+      - ".:/var/www/"
+      - "~/.ssh/:/root/.ssh"
+      - "./post_install.sh:/usr/local/bin/post_install.sh"
+    ports:
+      - "3000:3000"
+    command: /usr/local/bin/post_install.sh
+    depends_on:
+      - db
+    stdin_open: true
+    links:
+      - db
+    tty: true
